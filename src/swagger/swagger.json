@@ -1,0 +1,6725 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "bt-server"
+  },
+  "basePath": "/api",
+  "paths": {
+    "/Users/{id}/accessTokens/{fk}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Find a related item by id for accessTokens.",
+        "operationId": "User.prototype.__findById__accessTokens",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for accessTokens",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Delete a related item by id for accessTokens.",
+        "operationId": "User.prototype.__destroyById__accessTokens",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for accessTokens",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update a related item by id for accessTokens.",
+        "operationId": "User.prototype.__updateById__accessTokens",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for accessTokens",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/{id}/accessTokens": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Queries accessTokens of User.",
+        "operationId": "User.prototype.__get__accessTokens",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AccessToken"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Creates a new instance in accessTokens of this model.",
+        "operationId": "User.prototype.__create__accessTokens",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Deletes all accessTokens of this model.",
+        "operationId": "User.prototype.__delete__accessTokens",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/{id}/accessTokens/count": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Counts accessTokens of User.",
+        "operationId": "User.prototype.__count__accessTokens",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create a new instance of the model and persist it into the data source.",
+        "operationId": "User.create",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Patch an existing model instance or insert a new one into the data source.",
+        "operationId": "User.patchOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "User.replaceOrCreate__put_Users",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Find all instances of the model matched by filter from the data source.",
+        "operationId": "User.find",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/replaceOrCreate": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "User.replaceOrCreate__post_Users_replaceOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/upsertWithWhere": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+        "operationId": "User.upsertWithWhere",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/{id}/exists": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "User.exists__get_Users_{id}_exists",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/{id}": {
+      "head": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "User.exists__head_Users_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Find a model instance by {{id}} from the data source.",
+        "operationId": "User.findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "User.replaceById__put_Users_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Delete a model instance by {{id}} from the data source.",
+        "operationId": "User.deleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Patch attributes for a model instance and persist it into the data source.",
+        "operationId": "User.prototype.patchAttributes",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/{id}/replace": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "User.replaceById__post_Users_{id}_replace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/findOne": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Find first instance of the model matched by filter from the data source.",
+        "operationId": "User.findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/update": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update instances of the model matched by {{where}} from the data source.",
+        "operationId": "User.updateAll",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "Information related to the outcome of the operation",
+              "type": "object",
+              "properties": {
+                "count": {
+                  "description": "The number of instances updated",
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/count": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Count instances of the model matched by where from the data source.",
+        "operationId": "User.count",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/change-stream": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "User.createChangeStream__post_Users_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "formData",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "User.createChangeStream__get_Users_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Login a user with username/email and password.",
+        "operationId": "User.login",
+        "parameters": [
+          {
+            "name": "credentials",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Related objects to include in the response. See the description of return value for more details.",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "The response body contains properties of the AccessToken created on login.\nDepending on the value of `include` parameter, the body may contain additional properties:\n\n  - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)\n\n",
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/logout": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Logout a user with access token.",
+        "operationId": "User.logout",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/{id}/verify": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Trigger user's identity verification with configured verifyOptions",
+        "operationId": "User.prototype.verify",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/confirm": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Confirm a user registration with identity verification token.",
+        "operationId": "User.confirm",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "redirect",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/reset": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Reset password for a user with email.",
+        "operationId": "User.resetPassword",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/change-password": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Change a user's password.",
+        "operationId": "User.changePassword",
+        "parameters": [
+          {
+            "name": "oldPassword",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "newPassword",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/reset-password": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Reset user's password via a password-reset token.",
+        "operationId": "User.setPassword",
+        "parameters": [
+          {
+            "name": "newPassword",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/{id}/accessTokens/{fk}": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Find a related item by id for accessTokens.",
+        "operationId": "Employee.prototype.__findById__accessTokens",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for accessTokens",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Delete a related item by id for accessTokens.",
+        "operationId": "Employee.prototype.__destroyById__accessTokens",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for accessTokens",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Update a related item by id for accessTokens.",
+        "operationId": "Employee.prototype.__updateById__accessTokens",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for accessTokens",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/{id}/company": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Fetches belongsTo relation company.",
+        "operationId": "Employee.prototype.__get__company",
+        "parameters": [
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/{id}/address": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Fetches hasOne relation address.",
+        "operationId": "Employee.prototype.__get__address",
+        "parameters": [
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Address"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Creates a new instance in address of this model.",
+        "operationId": "Employee.prototype.__create__address",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Address"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Address"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Update address of this model.",
+        "operationId": "Employee.prototype.__update__address",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Address"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Address"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Deletes address of this model.",
+        "operationId": "Employee.prototype.__destroy__address",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/{id}/accessTokens": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Queries accessTokens of Employee.",
+        "operationId": "Employee.prototype.__get__accessTokens",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AccessToken"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Creates a new instance in accessTokens of this model.",
+        "operationId": "Employee.prototype.__create__accessTokens",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/AccessToken"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Deletes all accessTokens of this model.",
+        "operationId": "Employee.prototype.__delete__accessTokens",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/{id}/accessTokens/count": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Counts accessTokens of Employee.",
+        "operationId": "Employee.prototype.__count__accessTokens",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Create a new instance of the model and persist it into the data source.",
+        "operationId": "Employee.create",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Patch an existing model instance or insert a new one into the data source.",
+        "operationId": "Employee.patchOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "Employee.replaceOrCreate__put_Employees",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Find all instances of the model matched by filter from the data source.",
+        "operationId": "Employee.find",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/replaceOrCreate": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "Employee.replaceOrCreate__post_Employees_replaceOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/upsertWithWhere": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+        "operationId": "Employee.upsertWithWhere",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/{id}/exists": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "Employee.exists__get_Employees_{id}_exists",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/{id}": {
+      "head": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "Employee.exists__head_Employees_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Find a model instance by {{id}} from the data source.",
+        "operationId": "Employee.findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "Employee.replaceById__put_Employees_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Delete a model instance by {{id}} from the data source.",
+        "operationId": "Employee.deleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Patch attributes for a model instance and persist it into the data source.",
+        "operationId": "Employee.prototype.patchAttributes",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Employee"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/{id}/replace": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "Employee.replaceById__post_Employees_{id}_replace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/findOne": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Find first instance of the model matched by filter from the data source.",
+        "operationId": "Employee.findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/update": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Update instances of the model matched by {{where}} from the data source.",
+        "operationId": "Employee.updateAll",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "Information related to the outcome of the operation",
+              "type": "object",
+              "properties": {
+                "count": {
+                  "description": "The number of instances updated",
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/count": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Count instances of the model matched by where from the data source.",
+        "operationId": "Employee.count",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/change-stream": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "Employee.createChangeStream__post_Employees_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "formData",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "Employee.createChangeStream__get_Employees_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/login": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Login a user with username/email and password.",
+        "operationId": "Employee.login",
+        "parameters": [
+          {
+            "name": "credentials",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Related objects to include in the response. See the description of return value for more details.",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "The response body contains properties of the AccessToken created on login.\nDepending on the value of `include` parameter, the body may contain additional properties:\n\n  - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)\n\n",
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/logout": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Logout a user with access token.",
+        "operationId": "Employee.logout",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/{id}/verify": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Trigger user's identity verification with configured verifyOptions",
+        "operationId": "Employee.prototype.verify",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/confirm": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Confirm a user registration with identity verification token.",
+        "operationId": "Employee.confirm",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "redirect",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/reset": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Reset password for a user with email.",
+        "operationId": "Employee.resetPassword",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/change-password": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Change a user's password.",
+        "operationId": "Employee.changePassword",
+        "parameters": [
+          {
+            "name": "oldPassword",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "newPassword",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees/reset-password": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Reset user's password via a password-reset token.",
+        "operationId": "Employee.setPassword",
+        "parameters": [
+          {
+            "name": "newPassword",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/{id}/employees/{fk}": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Find a related item by id for employees.",
+        "operationId": "Company.prototype.__findById__employees",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for employees",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Delete a related item by id for employees.",
+        "operationId": "Company.prototype.__destroyById__employees",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for employees",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Update a related item by id for employees.",
+        "operationId": "Company.prototype.__updateById__employees",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for employees",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/{id}/transactions/{fk}": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Find a related item by id for transactions.",
+        "operationId": "Company.prototype.__findById__transactions",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for transactions",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Delete a related item by id for transactions.",
+        "operationId": "Company.prototype.__destroyById__transactions",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for transactions",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Update a related item by id for transactions.",
+        "operationId": "Company.prototype.__updateById__transactions",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for transactions",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/{id}/employees": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Queries employees of Company.",
+        "operationId": "Company.prototype.__get__employees",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Creates a new instance in employees of this model.",
+        "operationId": "Company.prototype.__create__employees",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Deletes all employees of this model.",
+        "operationId": "Company.prototype.__delete__employees",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/{id}/employees/count": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Counts employees of Company.",
+        "operationId": "Company.prototype.__count__employees",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/{id}/transactions": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Queries transactions of Company.",
+        "operationId": "Company.prototype.__get__transactions",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Transaction"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Creates a new instance in transactions of this model.",
+        "operationId": "Company.prototype.__create__transactions",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Deletes all transactions of this model.",
+        "operationId": "Company.prototype.__delete__transactions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/{id}/transactions/count": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Counts transactions of Company.",
+        "operationId": "Company.prototype.__count__transactions",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Create a new instance of the model and persist it into the data source.",
+        "operationId": "Company.create",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Patch an existing model instance or insert a new one into the data source.",
+        "operationId": "Company.patchOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "Company.replaceOrCreate__put_Companies",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Find all instances of the model matched by filter from the data source.",
+        "operationId": "Company.find",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Company"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/replaceOrCreate": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "Company.replaceOrCreate__post_Companies_replaceOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/upsertWithWhere": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+        "operationId": "Company.upsertWithWhere",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/{id}/exists": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "Company.exists__get_Companies_{id}_exists",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/{id}": {
+      "head": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "Company.exists__head_Companies_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Find a model instance by {{id}} from the data source.",
+        "operationId": "Company.findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "Company.replaceById__put_Companies_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Delete a model instance by {{id}} from the data source.",
+        "operationId": "Company.deleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Patch attributes for a model instance and persist it into the data source.",
+        "operationId": "Company.prototype.patchAttributes",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Company"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Company id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/{id}/replace": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "Company.replaceById__post_Companies_{id}_replace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/findOne": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Find first instance of the model matched by filter from the data source.",
+        "operationId": "Company.findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/update": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Update instances of the model matched by {{where}} from the data source.",
+        "operationId": "Company.updateAll",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "Information related to the outcome of the operation",
+              "type": "object",
+              "properties": {
+                "count": {
+                  "description": "The number of instances updated",
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/count": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Count instances of the model matched by where from the data source.",
+        "operationId": "Company.count",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Companies/change-stream": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "Company.createChangeStream__post_Companies_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "formData",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "Company.createChangeStream__get_Companies_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/{id}/transactionType": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Fetches belongsTo relation transactionType.",
+        "operationId": "Transaction.prototype.__get__transactionType",
+        "parameters": [
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Transaction id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/{id}/entity": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Fetches belongsTo relation entity.",
+        "operationId": "Transaction.prototype.__get__entity",
+        "parameters": [
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Transaction id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Create a new instance of the model and persist it into the data source.",
+        "operationId": "Transaction.create",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Patch an existing model instance or insert a new one into the data source.",
+        "operationId": "Transaction.patchOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "Transaction.replaceOrCreate__put_Transactions",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Find all instances of the model matched by filter from the data source.",
+        "operationId": "Transaction.find",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Transaction"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/replaceOrCreate": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "Transaction.replaceOrCreate__post_Transactions_replaceOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/upsertWithWhere": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+        "operationId": "Transaction.upsertWithWhere",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/{id}/exists": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "Transaction.exists__get_Transactions_{id}_exists",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/{id}": {
+      "head": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "Transaction.exists__head_Transactions_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Find a model instance by {{id}} from the data source.",
+        "operationId": "Transaction.findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "Transaction.replaceById__put_Transactions_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Delete a model instance by {{id}} from the data source.",
+        "operationId": "Transaction.deleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Patch attributes for a model instance and persist it into the data source.",
+        "operationId": "Transaction.prototype.patchAttributes",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Transaction"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Transaction id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/{id}/replace": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "Transaction.replaceById__post_Transactions_{id}_replace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/findOne": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Find first instance of the model matched by filter from the data source.",
+        "operationId": "Transaction.findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/update": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Update instances of the model matched by {{where}} from the data source.",
+        "operationId": "Transaction.updateAll",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "Information related to the outcome of the operation",
+              "type": "object",
+              "properties": {
+                "count": {
+                  "description": "The number of instances updated",
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/count": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Count instances of the model matched by where from the data source.",
+        "operationId": "Transaction.count",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Transactions/change-stream": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "Transaction.createChangeStream__post_Transactions_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "formData",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "Transaction.createChangeStream__get_Transactions_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/{id}/transactions/{fk}": {
+      "get": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Find a related item by id for transactions.",
+        "operationId": "TransactionType.prototype.__findById__transactions",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for transactions",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "TransactionType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Delete a related item by id for transactions.",
+        "operationId": "TransactionType.prototype.__destroyById__transactions",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for transactions",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "TransactionType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Update a related item by id for transactions.",
+        "operationId": "TransactionType.prototype.__updateById__transactions",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for transactions",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "TransactionType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/{id}/transactions": {
+      "get": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Queries transactions of TransactionType.",
+        "operationId": "TransactionType.prototype.__get__transactions",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "TransactionType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Transaction"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Creates a new instance in transactions of this model.",
+        "operationId": "TransactionType.prototype.__create__transactions",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "TransactionType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Deletes all transactions of this model.",
+        "operationId": "TransactionType.prototype.__delete__transactions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "TransactionType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/{id}/transactions/count": {
+      "get": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Counts transactions of TransactionType.",
+        "operationId": "TransactionType.prototype.__count__transactions",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "TransactionType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes": {
+      "post": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Create a new instance of the model and persist it into the data source.",
+        "operationId": "TransactionType.create",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Patch an existing model instance or insert a new one into the data source.",
+        "operationId": "TransactionType.patchOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "TransactionType.replaceOrCreate__put_TransactionTypes",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Find all instances of the model matched by filter from the data source.",
+        "operationId": "TransactionType.find",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionType"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/replaceOrCreate": {
+      "post": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "TransactionType.replaceOrCreate__post_TransactionTypes_replaceOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/upsertWithWhere": {
+      "post": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+        "operationId": "TransactionType.upsertWithWhere",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/{id}/exists": {
+      "get": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "TransactionType.exists__get_TransactionTypes_{id}_exists",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/{id}": {
+      "head": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "TransactionType.exists__head_TransactionTypes_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Find a model instance by {{id}} from the data source.",
+        "operationId": "TransactionType.findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "TransactionType.replaceById__put_TransactionTypes_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Delete a model instance by {{id}} from the data source.",
+        "operationId": "TransactionType.deleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Patch attributes for a model instance and persist it into the data source.",
+        "operationId": "TransactionType.prototype.patchAttributes",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/TransactionType"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "TransactionType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/{id}/replace": {
+      "post": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "TransactionType.replaceById__post_TransactionTypes_{id}_replace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/findOne": {
+      "get": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Find first instance of the model matched by filter from the data source.",
+        "operationId": "TransactionType.findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/update": {
+      "post": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Update instances of the model matched by {{where}} from the data source.",
+        "operationId": "TransactionType.updateAll",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/TransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "Information related to the outcome of the operation",
+              "type": "object",
+              "properties": {
+                "count": {
+                  "description": "The number of instances updated",
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/count": {
+      "get": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Count instances of the model matched by where from the data source.",
+        "operationId": "TransactionType.count",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/TransactionTypes/change-stream": {
+      "post": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "TransactionType.createChangeStream__post_TransactionTypes_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "formData",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "TransactionType"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "TransactionType.createChangeStream__get_TransactionTypes_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/{id}/transactions/{fk}": {
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Find a related item by id for transactions.",
+        "operationId": "Entity.prototype.__findById__transactions",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for transactions",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entity id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Delete a related item by id for transactions.",
+        "operationId": "Entity.prototype.__destroyById__transactions",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for transactions",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entity id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Update a related item by id for transactions.",
+        "operationId": "Entity.prototype.__updateById__transactions",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for transactions",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entity id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/{id}/entityType": {
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Fetches belongsTo relation entityType.",
+        "operationId": "Entity.prototype.__get__entityType",
+        "parameters": [
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entity id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/{id}/transactions": {
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Queries transactions of Entity.",
+        "operationId": "Entity.prototype.__get__transactions",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entity id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Transaction"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Creates a new instance in transactions of this model.",
+        "operationId": "Entity.prototype.__create__transactions",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entity id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Transaction"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Deletes all transactions of this model.",
+        "operationId": "Entity.prototype.__delete__transactions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entity id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/{id}/transactions/count": {
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Counts transactions of Entity.",
+        "operationId": "Entity.prototype.__count__transactions",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entity id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities": {
+      "post": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Create a new instance of the model and persist it into the data source.",
+        "operationId": "Entity.create",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Patch an existing model instance or insert a new one into the data source.",
+        "operationId": "Entity.patchOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "Entity.replaceOrCreate__put_Entities",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Find all instances of the model matched by filter from the data source.",
+        "operationId": "Entity.find",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Entity"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/replaceOrCreate": {
+      "post": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "Entity.replaceOrCreate__post_Entities_replaceOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/upsertWithWhere": {
+      "post": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+        "operationId": "Entity.upsertWithWhere",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/{id}/exists": {
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "Entity.exists__get_Entities_{id}_exists",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/{id}": {
+      "head": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "Entity.exists__head_Entities_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Find a model instance by {{id}} from the data source.",
+        "operationId": "Entity.findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "Entity.replaceById__put_Entities_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Delete a model instance by {{id}} from the data source.",
+        "operationId": "Entity.deleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Patch attributes for a model instance and persist it into the data source.",
+        "operationId": "Entity.prototype.patchAttributes",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Entity"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Entity id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/{id}/replace": {
+      "post": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "Entity.replaceById__post_Entities_{id}_replace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/findOne": {
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Find first instance of the model matched by filter from the data source.",
+        "operationId": "Entity.findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/update": {
+      "post": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Update instances of the model matched by {{where}} from the data source.",
+        "operationId": "Entity.updateAll",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "Information related to the outcome of the operation",
+              "type": "object",
+              "properties": {
+                "count": {
+                  "description": "The number of instances updated",
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/count": {
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Count instances of the model matched by where from the data source.",
+        "operationId": "Entity.count",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Entities/change-stream": {
+      "post": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "Entity.createChangeStream__post_Entities_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "formData",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "Entity.createChangeStream__get_Entities_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/{id}/entity/{fk}": {
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Find a related item by id for entity.",
+        "operationId": "EntityType.prototype.__findById__entity",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for entity",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "EntityType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Delete a related item by id for entity.",
+        "operationId": "EntityType.prototype.__destroyById__entity",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for entity",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "EntityType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Update a related item by id for entity.",
+        "operationId": "EntityType.prototype.__updateById__entity",
+        "parameters": [
+          {
+            "name": "fk",
+            "in": "path",
+            "description": "Foreign key for entity",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "EntityType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/{id}/entity": {
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Queries entity of EntityType.",
+        "operationId": "EntityType.prototype.__get__entity",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "EntityType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Entity"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Creates a new instance in entity of this model.",
+        "operationId": "EntityType.prototype.__create__entity",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "EntityType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/Entity"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Deletes all entity of this model.",
+        "operationId": "EntityType.prototype.__delete__entity",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "EntityType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/{id}/entity/count": {
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Counts entity of EntityType.",
+        "operationId": "EntityType.prototype.__count__entity",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "EntityType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes": {
+      "post": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Create a new instance of the model and persist it into the data source.",
+        "operationId": "EntityType.create",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Patch an existing model instance or insert a new one into the data source.",
+        "operationId": "EntityType.patchOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "EntityType.replaceOrCreate__put_EntityTypes",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Find all instances of the model matched by filter from the data source.",
+        "operationId": "EntityType.find",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/EntityType"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/replaceOrCreate": {
+      "post": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Replace an existing model instance or insert a new one into the data source.",
+        "operationId": "EntityType.replaceOrCreate__post_EntityTypes_replaceOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/upsertWithWhere": {
+      "post": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+        "operationId": "EntityType.upsertWithWhere",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/{id}/exists": {
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "EntityType.exists__get_EntityTypes_{id}_exists",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/{id}": {
+      "head": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Check whether a model instance exists in the data source.",
+        "operationId": "EntityType.exists__head_EntityTypes_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Find a model instance by {{id}} from the data source.",
+        "operationId": "EntityType.findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "EntityType.replaceById__put_EntityTypes_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Delete a model instance by {{id}} from the data source.",
+        "operationId": "EntityType.deleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Patch attributes for a model instance and persist it into the data source.",
+        "operationId": "EntityType.prototype.patchAttributes",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/EntityType"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "EntityType id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/{id}/replace": {
+      "post": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Replace attributes for a model instance and persist it into the data source.",
+        "operationId": "EntityType.replaceById__post_EntityTypes_{id}_replace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/findOne": {
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Find first instance of the model matched by filter from the data source.",
+        "operationId": "EntityType.findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/update": {
+      "post": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Update instances of the model matched by {{where}} from the data source.",
+        "operationId": "EntityType.updateAll",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/EntityType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "Information related to the outcome of the operation",
+              "type": "object",
+              "properties": {
+                "count": {
+                  "description": "The number of instances updated",
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/count": {
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Count instances of the model matched by where from the data source.",
+        "operationId": "EntityType.count",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/EntityTypes/change-stream": {
+      "post": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "EntityType.createChangeStream__post_EntityTypes_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "formData",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "EntityType"
+        ],
+        "summary": "Create a change stream.",
+        "operationId": "EntityType.createChangeStream__get_EntityTypes_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "User"
+    },
+    {
+      "name": "Employee"
+    },
+    {
+      "name": "Company"
+    },
+    {
+      "name": "Transaction"
+    },
+    {
+      "name": "TransactionType"
+    },
+    {
+      "name": "Entity"
+    },
+    {
+      "name": "EntityType"
+    }
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded",
+    "application/xml",
+    "text/xml"
+  ],
+  "produces": [
+    "application/json",
+    "application/xml",
+    "text/xml",
+    "application/javascript",
+    "text/javascript"
+  ],
+  "definitions": {
+    "x-any": {
+      "properties": {}
+    },
+    "AccessToken": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ttl": {
+          "default": 1209600,
+          "description": "time to live in seconds (2 weeks by default)",
+          "type": "number",
+          "format": "double"
+        },
+        "scopes": {
+          "description": "Array of scopes granted to this access token.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "userId": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "User": {
+      "properties": {
+        "realm": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "emailVerified": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "additionalProperties": false
+    },
+    "Company": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "capital": {
+          "type": "number",
+          "format": "double"
+        },
+        "assets": {
+          "type": "number",
+          "format": "double"
+        },
+        "liabilities": {
+          "type": "number",
+          "format": "double"
+        },
+        "taxRate": {
+          "type": "number",
+          "format": "double"
+        },
+        "interestRate": {
+          "type": "number",
+          "format": "double"
+        },
+        "id": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "Address": {
+      "properties": {
+        "streetAddress": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "streetAddress",
+        "city",
+        "state",
+        "zipCode"
+      ],
+      "additionalProperties": false
+    },
+    "Employee": {
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "realm": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "emailVerified": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "number",
+          "format": "double"
+        },
+        "companyId": {
+          "type": "number",
+          "format": "double"
+        },
+        "_address": {
+          "$ref": "#/definitions/Address"
+        }
+      },
+      "required": [
+        "firstName",
+        "lastName",
+        "email"
+      ],
+      "additionalProperties": false
+    },
+    "Transaction": {
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number",
+          "format": "double"
+        },
+        "companyId": {
+          "type": "number",
+          "format": "double"
+        },
+        "transactionTypeId": {
+          "type": "number",
+          "format": "double"
+        },
+        "entityId": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "date",
+        "amount"
+      ],
+      "additionalProperties": false
+    },
+    "TransactionType": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "description",
+        "code"
+      ],
+      "additionalProperties": false
+    },
+    "Entity": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number",
+          "format": "double"
+        },
+        "entityTypeId": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "EntityType": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "description",
+        "code"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

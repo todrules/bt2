@@ -39622,6 +39622,59 @@ ion-card.dash-card {
   background-color: #fff;
 }
 
+page-login .splash-bg {
+  position: relative;
+  background: url("/assets/img/bg-soon.png");
+  background-position: left top;
+  background-size: cover;
+  height: 100%;
+  z-index: 1;
+  -webkit-animation: animatedBackground 50s linear infinite;
+  animation: animatedBackground 50s linear infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+page-signup .splash-bg {
+  position: relative;
+  background: url("/assets/img/bg-soon.png");
+  background-position: left top;
+  background-size: cover;
+  height: 100%;
+  z-index: 1;
+  -webkit-animation: animatedBackground 50s linear infinite;
+  animation: animatedBackground 50s linear infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
 page-welcome .splash-bg {
   position: relative;
   background: url("../assets/img/bg-soon.png") no-repeat transparent;
@@ -39631,15 +39684,6 @@ page-welcome .splash-bg {
   background-repeat: repeat-x;
   -webkit-animation: animatedBackground 40s linear infinite;
   animation: animatedBackground 40s linear infinite;
-}
-
-@-webkit-keyframes animatedBackground {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 100% 0;
-  }
 }
 
 @keyframes animatedBackground {

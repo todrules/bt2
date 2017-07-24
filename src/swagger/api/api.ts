@@ -1,0 +1,15 @@
+export * from './company.service';
+import { CompanyService } from './company.service';
+export * from './employee.service';
+import { EmployeeService } from './employee.service';
+export * from './entity.service';
+import { EntityService } from './entity.service';
+export * from './entityType.service';
+import { EntityTypeService } from './entityType.service';
+export * from './transaction.service';
+import { TransactionService } from './transaction.service';
+export * from './transactionType.service';
+import { TransactionTypeService } from './transactionType.service';
+export * from './user.service';
+import { UserService } from './user.service';
+export const APIS = [CompanyService, EmployeeService, EntityService, EntityTypeService, TransactionService, TransactionTypeService, UserService];

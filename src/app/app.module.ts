@@ -9,51 +9,40 @@ import { ChartsModule } from 'ng2-charts';
 import { CreditCardDirectivesModule } from 'angular-cc-library';
 import { MyApp } from './app.component';
 
-import { LoginPage } from '../pages/login/login';
-import { MenuPage } from '../pages/menu/menu';
-import { SignupPage } from '../pages/signup/signup';
-import { WelcomePage } from '../pages/welcome/welcome';
-
-import { Settings } from '../providers/settings';
+import { LoginPage } from '../features/login/login';
+import { MenuPage } from '../features/menu/menu';
+import { SignupPage } from '../features/signup/signup';
+import { WelcomePage } from '../features/welcome/welcome';
 
 import { Camera } from '@ionic-native/camera';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { DashboardComponent } from '../pages/dashboard/dashboard.component';
-import { PaymentComponent } from '../pages/payment/payment.component';
+import { DashboardComponent } from '../features/dashboard/dashboard.component';
+import { PaymentComponent } from '../features/payment/payment.component';
+import { WidgetsModule } from '../widgets/widgets.module';
+import { FormsModule } from '@angular/forms';
+import { ApiModule } from '../swagger';
 
-export function provideSettings(storage: Storage) {
-
-  return new Settings(storage, {
-    option1: true,
-    option2: 'Ionitron J. Framework',
-    option3: '3',
-    option4: 'Hello'
-  });
-}
 
 @NgModule({
-  declarations: [
-    MyApp,
-    LoginPage,
-    MenuPage,
-    SignupPage,
-    WelcomePage,
-    DashboardComponent,
-    PaymentComponent
-  ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot({
+      driverOrder: ['indexeddb', 'sqlite', 'websql'],
+      name: 'btApp',
+      storeName: 'bt_store'
+    }),
+    WidgetsModule,
     FlexLayoutModule,
     ChartsModule,
-    CreditCardDirectivesModule
+    CreditCardDirectivesModule,
+    ApiModule
   ],
-  bootstrap: [IonicApp],
-  entryComponents: [
+  declarations: [
     MyApp,
     LoginPage,
     MenuPage,
@@ -67,8 +56,6 @@ export function provideSettings(storage: Storage) {
     GoogleMaps,
     SplashScreen,
     StatusBar,
-    { provide: Settings, useFactory: provideSettings, deps: [Storage] },
-    // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ],
   exports: [
@@ -76,7 +63,20 @@ export function provideSettings(storage: Storage) {
     DashboardComponent,
     PaymentComponent,
     ChartsModule,
-    CreditCardDirectivesModule
-  ]
+    CreditCardDirectivesModule,
+    FormsModule,
+    WidgetsModule,
+    ApiModule
+  ],
+  entryComponents: [
+    MyApp,
+    LoginPage,
+    MenuPage,
+    SignupPage,
+    WelcomePage,
+    DashboardComponent,
+    PaymentComponent
+  ],
+  bootstrap: [IonicApp]
 })
 export class AppModule { }
