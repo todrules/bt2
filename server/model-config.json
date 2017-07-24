@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Employee": {
+    "dataSource": "pg",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": false
+    }
+  },
+  "Company": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "Address": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "Transaction": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "TransactionType": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "Entity": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "EntityType": {
+    "dataSource": "pg",
+    "public": true
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Company",
+  "plural": "Companies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "capital": {
+      "type": "number"
+    },
+    "assets": {
+      "type": "number"
+    },
+    "liabilities": {
+      "type": "number"
+    },
+    "taxRate": {
+      "type": "number"
+    },
+    "interestRate": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "employees": {
+      "type": "hasMany",
+      "model": "Employee"
+    },
+    "transactions": {
+      "type": "hasMany",
+      "model": "Transaction"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

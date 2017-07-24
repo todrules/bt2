@@ -1,0 +1,35 @@
+{
+  "name": "Employee",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "address": {
+      "type": "embedsOne",
+      "model": "Address",
+      "property": "address"
+    },
+    "company": {
+      "type": "belongsTo",
+      "model": "Company"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

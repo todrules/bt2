@@ -1,0 +1,31 @@
+{
+  "name": "Entity",
+  "plural": "Entities",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "entityType": {
+      "type": "belongsTo",
+      "model": "EntityType"
+    },
+    "transactions": {
+      "type": "hasMany",
+      "model": "Transaction"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

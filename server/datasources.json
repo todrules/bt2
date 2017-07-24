@@ -1,0 +1,14 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "pg": {
+    "connector": "postgresql",
+    "url": "postgres://awupaxvyimmmmc:b6e0796b9668a28c17def9b9d4d1a580c0c8fd3fde8410cd70ab14da284e14c2@ec2-54-225-118-55.compute-1.amazonaws.com:5432/d4rtd7b2qtjog1?ssl=true"
+  },
+  "transient": {
+    "name": "transient",
+    "connector": "transient"
+  }
+}

@@ -3,11 +3,17 @@
   <div class="splash-info">
     <div class="splash-logo"></div>
     <div class="splash-intro">
-      {{ 'WELCOME_INTRO' | translate }}
+      <h6>blackthorn.io</h6>
     </div>
   </div>
-  <div padding>
-    <button ion-button block (click)="signup()" class="signup">{{ 'SIGNUP' | translate }}</button>
-    <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+      <button ion-button (click)="login()" style="min-width: 300px;" color="primary">Login</button>
+      <button ion-button (click)="signup()" style="min-width: 300px; " color="sky">Signup</button>
+
+    </div>
+
   </div>
+
+
 </ion-content>

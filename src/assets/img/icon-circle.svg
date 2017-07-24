@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 98</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M20,40 C31.0455,40 40,31.0455 40,20 C40,8.9545 31.0455,0 20,0 C8.9545,0 0,8.9545 0,20 C0,31.0455 8.9545,40 20,40 L20,40 Z M20,30 C25.523,30 30,25.523 30,20 C30,14.477 25.523,10 20,10 C14.477,10 10,14.477 10,20 C10,25.523 14.477,30 20,30 L20,30 Z" id="path-1"></path>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Coming-Soon" transform="translate(-699.000000, -312.000000)">
+            <g id="Group-2" transform="translate(249.000000, 312.000000)">
+                <g id="Group-98" transform="translate(450.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-97"></g>
+                    <polygon id="Fill-96" fill="#FFFFFF" mask="url(#mask-2)" points="-2.5 -2.5 42.5 -2.5 42.5 42.5 -2.5 42.5"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

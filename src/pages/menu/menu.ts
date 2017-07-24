@@ -1,9 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Nav } from 'ionic-angular';
 
-import { ContentPage } from '../content/content';
 import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { PaymentComponent } from '../payment/payment.component';
 
 
 @Component({
@@ -14,13 +15,15 @@ export class MenuPage {
   // A reference to the ion-nav in our component
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = ContentPage;
+  rootPage: any = DashboardComponent;
 
   pages: Array<{ title: string, component: any }>;
 
   constructor(public navCtrl: NavController) {
     // used for an example of ngFor and navigation
     this.pages = [
+      { title: 'Dashboard', component: DashboardComponent },
+      { title: 'Payment', component: PaymentComponent },
       { title: 'Sign in', component: LoginPage },
       { title: 'Signup', component: SignupPage }
     ];
