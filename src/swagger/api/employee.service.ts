@@ -36,7 +36,7 @@ import { BASE_PATH } from '../../env/environment';
 @Injectable()
 export class EmployeeService {
 
-    protected basePath = BASE_PATH;
+    protected basePath = 'https://bt-demo-001.herokuapp.com/api';
     public defaultHeaders: Headers = new Headers();
     public configuration: Configuration = new Configuration();
 
