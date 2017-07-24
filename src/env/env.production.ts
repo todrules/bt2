@@ -16,5 +16,5 @@ export const PROTOCOL = 'http';
 export const PORT = 4200;
 export const BASE_URL = `${PROTOCOL}://${BASE_HOST}${PORT ? ':' + PORT : null}`;
 
-export const BASE_PATH = new InjectionToken<string>('https://bt-demo-001.herokuapp.com/api');
+export const BASE_PATH = 'https://bt-demo-001.herokuapp.com/api';
 
